@@ -12,12 +12,6 @@
    </head>
     <body>
         <form id="Form1" >
-
-            <div  class="container">
-                        <div id="logo" >
-                            <img id="Img1" src="Images/logo_umg.jpg" alt="Freshdesign" />
-                        </div>
-             </div>
            <nav class="navbar navbar-default" role="navigation"  >
                 <div class="container">
                     <div class="navbar-header">
@@ -34,23 +28,71 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">                        
                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Mantenimientos<b class="caret"></b></a>
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Clientes<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Editorial</a>
+                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Libro</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerLibro?accion=busqueda" id="A3">Busqueda Libro WS</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerEditorial?accion=busqueda" id="A2">Busqueda Editorial WS</a>
+                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
-                             </li>                         
-                             <li > <a href="#" id="A4" > Opción X</a></li>              
+                             </li>
+                             <li id="Li2" class="dropdown" >
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Departamentos<b class="caret"></b></a>
+                                <ul id="Ul2" class="dropdown-menu" >
+                                    <li> 
+                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                    </li>
+                                    <li> 
+                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                    </li>
+                                </ul>
+                             </li>   
+                             <li id="Li2" class="dropdown" >
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Detalle Pedido<b class="caret"></b></a>
+                                <ul id="Ul2" class="dropdown-menu" >
+                                    <li> 
+                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                    </li>
+                                    <li> 
+                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                    </li>
+                                </ul>
+                             </li>   
+                             <li id="Li2" class="dropdown" >
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Municipios<b class="caret"></b></a>
+                                <ul id="Ul2" class="dropdown-menu" >
+                                    <li> 
+                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                    </li>
+                                    <li> 
+                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                    </li>
+                                </ul>
+                             </li>
+                             <li id="Li2" class="dropdown" >
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Pedidos<b class="caret"></b></a>
+                                <ul id="Ul2" class="dropdown-menu" >
+                                    <li> 
+                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                    </li>
+                                    <li> 
+                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                    </li>
+                                </ul>
+                             </li>   
+                             <li id="Li2" class="dropdown" >
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Producto<b class="caret"></b></a>
+                                <ul id="Ul2" class="dropdown-menu" >
+                                    <li> 
+                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                    </li>
+                                    <li> 
+                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                    </li>
+                                </ul>
+                             </li>   
                         </ul>                   
                     </div>
                 </div>
