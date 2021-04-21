@@ -1,34 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.dao.DaoPedido;
+import org.modelos.Pedido;
 
-/**
- *
- * @author javie
- */
 @WebServlet(name = "ControllerPedido", urlPatterns = {"/ControllerPedido"})
 public class ControllerPedido extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    String listar="Mantenimientos/Pedido/pedidoConsulta.jsp";
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -46,29 +34,41 @@ public class ControllerPedido extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         //processRequest(request, response);
+        String acceso="";        
+        String action = request.getParameter("accion");        
+        
+        Pedido pedido = new Pedido();
+        DaoPedido daoPedido = new DaoPedido();
+        
+        switch (action){
+            case "read":
+                acceso = listar;
+            break;
+            
+            case "busqueda" :
+                acceso = "Mantenimientos/Pedido/pedidoBusqueda.jsp";
+            break;
+            
+           /* case "consumoWS" :
+                int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+                List<org.servicios.Pedido> lstEdit = getPedido(idPedido);
+                for (org.servicios.Pedido edit : lstEdit){
+                    System.out.println("Codigo Pedido: " + edit.getIdPedido());
+                    System.out.println("Descripcion: " + edit.getDescripcion());
+                    System.out.println("Direccion: " + edit.getDireccion());
+                    System.out.println("Telefono: " + edit.getTelefono());
+                }
+            break;*/
+            }
+        RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
+        vista.forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

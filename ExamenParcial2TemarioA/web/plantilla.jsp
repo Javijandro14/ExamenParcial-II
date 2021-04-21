@@ -42,10 +42,10 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Departamentos<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                        <a href="ControllerDepartamentos?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                        <a href="ControllerDepartamentos?accion=busqueda" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
                              </li>   
@@ -53,10 +53,10 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Detalle Pedido<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                        <a href="ControllerDetallePedido?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                        <a href="ControllerDetallePedido?accion=busqueda" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
                              </li>   
@@ -64,10 +64,10 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Municipios<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                        <a href="ControllerMunicipio?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                        <a href="ControllerMunicipio?accion=busqueda" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
                              </li>
@@ -75,10 +75,10 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Pedidos<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                        <a href="ControllerPedido?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                        <a href="ControllerPedido?accion=busqueda" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
                              </li>   
@@ -86,10 +86,10 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Producto<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                        <a href="ControllerProducto?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                        <a href="ControllerProducto?accion=busqueda" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
                              </li>   
