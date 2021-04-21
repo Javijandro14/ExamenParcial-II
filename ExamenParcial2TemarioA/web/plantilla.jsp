@@ -12,7 +12,7 @@
    </head>
     <body>
         <form id="Form1" >
-           <nav class="navbar navbar-default" role="navigation"  >
+           <nav class="navbar navbar-default" role="navigation" >
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,10 +31,10 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Clientes<b class="caret"></b></a>
                                 <ul id="Ul2" class="dropdown-menu" >
                                     <li> 
-                                        <a href="ControllerEditorial?accion=read" id="A2">Consulta</a>
+                                        <a href="ControllerClientes?accion=read" id="A2">Consulta</a>
                                     </li>
                                     <li> 
-                                        <a href="ControllerLibro?accion=read" id="A3">Busqueda</a>
+                                        <a href="ControllerClientes?accion=busqueda" id="A3">Busqueda</a>
                                     </li>
                                 </ul>
                              </li>
