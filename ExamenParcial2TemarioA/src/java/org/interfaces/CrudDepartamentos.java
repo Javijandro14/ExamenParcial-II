@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.interfaces;
 
-/**
- *
- * @author javie
- */
+import java.util.List;
+import org.modelos.Departamentos;
+
 public interface CrudDepartamentos {
-    
+    public List listar();
+    public Departamentos list (int id);
+    public boolean insertar(Departamentos departamentos);
+    public boolean modificar(Departamentos departamentos);
+    public boolean eliminar(Departamentos departamentos);
+    public List busqueda(String parametro, String opcion);
 }
