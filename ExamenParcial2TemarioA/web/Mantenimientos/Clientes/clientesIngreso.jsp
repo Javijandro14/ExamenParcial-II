@@ -25,7 +25,7 @@
                             <td class="text-center"><% %></td>
                             <td class="text-center">                                
                                 <a href="ControllerEditorial?accion=editar&id=<% %>">Editar</a>
-                                <a href="ControllerEditorial?accion=delete&id=<% %>">Eliminar</a>
+                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<% %>">Eliminar</a>
                             </td>
                         </tr>
                         <% %>
