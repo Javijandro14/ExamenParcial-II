@@ -45,7 +45,23 @@ public class DaoClientes implements CrudClientes{
 
     @Override
     public Clientes list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       sql = "SELECT * FROM CLIENTE WHERE ID_CLIENTE=" + id;
+        try {
+            con.open();
+            rs = con.executeQuery(sql);
+            while(rs.next()){
+                clientes.setIdCliente(rs.getInt("ID_CLIENTE"));
+                clientes.setNombre(rs.getString("NOMBRE"));
+                clientes.setApellido(rs.getString("APELLIDO"));
+                clientes.setNit(rs.getString("NIT"));
+                clientes.setTelefono(rs.getString("TELEFONO"));
+                clientes.setDireccion(rs.getString("DIRECCION"));
+            }
+            rs.close();
+            con.close();
+        } catch (Exception e) {
+        }
+        return clientes;
     }
 
     @Override
