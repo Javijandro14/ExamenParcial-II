@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="org.modelos.Clientes"%>
+<%@page import="java.util.List"%>
+<%@page import="org.dao.DaoClientes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../../plantilla.jsp"/>
 <!DOCTYPE html>
@@ -14,7 +18,7 @@
                 <table border="1" width="1" cellspacing="1" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="text-center">Id Cliente</th>
+                            <th class="text-center">Id</th>
                             <th class="text-center">Nombre</th>
                             <th class="text-center">Apellido</th>
                             <th class="text-center">NIT</th>
@@ -23,23 +27,28 @@
                             <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
-                    <%                        
-                                            
+                    <%
+                        DaoClientes daoClientes = new  DaoClientes();
+                        List<Clientes> lstClientes = daoClientes.listar();
+                        Iterator<Clientes> iteratorClientes = lstClientes.iterator();
+                        Clientes clientes = null;
+                        while (iteratorClientes.hasNext()){
+                            clientes = iteratorClientes.next();  
                     %>                     
                     <tbody>
                         <tr>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
+                            <td class="text-center"><%=clientes.getIdCliente() %></td>
+                            <td class="text-center"><%=clientes.getNombre() %></td>
+                            <td class="text-center"><%=clientes.getApellido() %></td>
+                            <td class="text-center"><%=clientes.getNit() %></td>
+                            <td class="text-center"><%=clientes.getTelefono() %></td>
+                            <td class="text-center"><%=clientes.getDireccion() %></td>
                             <td class="text-center">                                
-                                <a class="btn btn-warning" href="ControllerEditorial?accion=editar&id=<% %>">Editar</a>
-                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<% %>">Eliminar</a>
+                                <a class="btn btn-warning" href="ControllerEditorial?accion=editar&id=<%=clientes.getIdCliente() %>">Editar</a>
+                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<%=clientes.getIdCliente() %>">Eliminar</a>
                             </td>
                         </tr>
-                        <% %>
+                        <%}%>
                     </tbody>
                 </table>
         </div>
