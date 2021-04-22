@@ -66,7 +66,16 @@ public class DaoClientes implements CrudClientes{
 
     @Override
     public boolean insertar(Clientes clientes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sql = "INSERT INTO CLIENTE (ID_CLIENTE, NOMBRE, APELLIDO, NIT, TELEFONO, DIRECCION) "
+                    +"VALUES ((SELECT ISNULL(MAX(ID_CLIENTE),0) + 1 FROM CLIENTE), '" + clientes.getNombre() +"', '" + clientes.getApellido() +"',"
+                    +" '" + clientes.getNit() +"', '" + clientes.getTelefono() +"', '" + clientes.getDireccion() + "')";
+        try {
+            con.open();            
+            resp = con.executeSql(sql);            
+            con.close();
+        } catch (Exception e) {
+        }
+        return resp;
     }
 
     @Override
