@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="ServicioClientes">
-      <implementation-class>org.servicios.ServicioClientes</implementation-class>
-    </service>
-    <service name="ServicioDepartamentos">
-      <implementation-class>org.servicios.ServicioDepartamentos</implementation-class>
-    </service>
     <service name="ServicioDetallePedido">
       <implementation-class>org.servicios.ServicioDetallePedido</implementation-class>
     </service>
+    <service name="ServicioClientes">
+      <implementation-class>org.servicios.ServicioClientes</implementation-class>
+    </service>
     <service name="ServicioMunicipio">
       <implementation-class>org.servicios.ServicioMunicipio</implementation-class>
+    </service>
+    <service name="ServicioDepartamentos">
+      <implementation-class>org.servicios.ServicioDepartamentos</implementation-class>
     </service>
     <service name="ServicioPedido">
       <implementation-class>org.servicios.ServicioPedido</implementation-class>
