@@ -3,7 +3,9 @@ package org.modelos;
 public class DetallePedido {
     private int idDetallePedido;
     private int idPedido;
+    private int pedido;
     private int idProducto;
+    private int producto;
     private int cantidad;
     private double precio;
     private double total;
@@ -64,4 +66,21 @@ public class DetallePedido {
     public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
+
+    public int getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(int pedido) {
+        this.pedido = pedido;
+    }
+
+    public int getProducto() {
+        return producto;
+    }
+
+    public void setProducto(int producto) {
+        this.producto = producto;
+    }
+    
 }

@@ -34,12 +34,12 @@
                     %>                     
                     <tbody>
                         <tr>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center"><% %></td>
+                            <td class="text-center"><%=municipio.getIdMunicipio() %></td>
+                            <td class="text-center"><%=municipio.getMunicipio() %></td>
+                            <td class="text-center"><%=municipio.getIdDepartamento() %></td>
                             <td class="text-center">                                
-                                <a class="btn btn-warning" href="ControllerEditorial?accion=editar&id=<% %>">Editar</a>
-                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<% %>">Eliminar</a>
+                                <a class="btn btn-warning" href="ControllerEditorial?accion=editar&id=<%=municipio.getIdMunicipio() %>">Editar</a>
+                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<%=municipio.getIdMunicipio() %>">Eliminar</a>
                             </td>
                         </tr>
                         <%}%>

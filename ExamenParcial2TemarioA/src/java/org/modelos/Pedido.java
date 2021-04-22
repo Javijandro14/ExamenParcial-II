@@ -3,9 +3,12 @@ package org.modelos;
 public class Pedido {
     private int idPedido;
     private int idCliente;
+    private int cliente;
     private String observacion;
     private int idDepartamento;
     private int idMunicipio;
+    private int municipio;
+    private int departamento;
     private int estado;
     private double total;
     private double totalUsd;
@@ -72,6 +75,30 @@ public class Pedido {
 
     public void setTotalUsd(double totalUsd) {
         this.totalUsd = totalUsd;
+    }
+
+    public int getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(int cliente) {
+        this.cliente = cliente;
+    }
+
+    public int getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(int municipio) {
+        this.municipio = municipio;
+    }
+
+    public int getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(int departamento) {
+        this.departamento = departamento;
     }
     
     

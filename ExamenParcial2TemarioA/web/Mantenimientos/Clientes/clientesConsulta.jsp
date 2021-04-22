@@ -13,7 +13,7 @@
     <body>
         <div class="container">            
             <h1>Clientes</h1>
-            <a class="btn btn-success" href="ControllerLibro?accion=nuevo"  > Agregar Nuevo</a>
+            <a class="btn btn-success" href="ControllerClientes?accion=nuevo"> Agregar Nuevo</a>
             <br><br>
                 <table border="1" width="1" cellspacing="1" class="table table-bordered">
                     <thead>
@@ -44,8 +44,8 @@
                             <td class="text-center"><%=clientes.getTelefono() %></td>
                             <td class="text-center"><%=clientes.getDireccion() %></td>
                             <td class="text-center">                                
-                                <a class="btn btn-warning" href="ControllerEditorial?accion=editar&id=<%=clientes.getIdCliente() %>">Editar</a>
-                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<%=clientes.getIdCliente() %>">Eliminar</a>
+                                <a class="btn btn-warning" href="ControllerClientes?accion=editar&id=<%=clientes.getIdCliente() %>">Editar</a>
+                                <a class="btn btn-danger" href="ControllerClientes?accion=delete&id=<%=clientes.getIdCliente() %>">Eliminar</a>
                             </td>
                         </tr>
                         <%}%>
