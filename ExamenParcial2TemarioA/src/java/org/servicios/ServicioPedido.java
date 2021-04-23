@@ -12,7 +12,7 @@ public class ServicioPedido {
 
    DaoPedido daoPedido = new DaoPedido();
     @WebMethod(operationName = "getPedido")
-    public List<Pedido> getPedido(@WebParam(name = "idPedido") int idPedido) {
+    public List<Pedido> getPedido() {
         List<Pedido> lstPedido = daoPedido.listar();
         return lstPedido;
     }

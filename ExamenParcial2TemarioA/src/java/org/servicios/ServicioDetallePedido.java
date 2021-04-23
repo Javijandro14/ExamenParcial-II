@@ -1,26 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.servicios;
 
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
+import org.dao.DaoDetallePedido;
+import org.modelos.DetallePedido;
 
-/**
- *
- * @author javie
- */
 @WebService(serviceName = "ServicioDetallePedido")
 public class ServicioDetallePedido {
-
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    DaoDetallePedido daoDetallePedido = new DaoDetallePedido();
+    @WebMethod(operationName = "getDetallePedido")
+    public List<DetallePedido> getDetallePedido() {
+        List<DetallePedido> lstDetallePedido = daoDetallePedido.listar();
+        return lstDetallePedido;
     }
 }

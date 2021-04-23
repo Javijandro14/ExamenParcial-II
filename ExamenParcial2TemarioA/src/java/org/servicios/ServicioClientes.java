@@ -11,9 +11,9 @@ import org.modelos.Clientes;
 public class ServicioClientes {
 
     DaoClientes daoClientes = new DaoClientes();
-    @WebMethod(operationName = "hello")
-    public List<Clientes> getClientes(@WebParam(name = "nit") String nit) {
-        List<Clientes> lstClientes = (List<Clientes>) daoClientes.list(Integer.parseInt(nit));
+    @WebMethod(operationName = "getClientes")
+    public List<Clientes> getClientes() {
+        List<Clientes> lstClientes = daoClientes.listar();
         return lstClientes;
     }
 }
