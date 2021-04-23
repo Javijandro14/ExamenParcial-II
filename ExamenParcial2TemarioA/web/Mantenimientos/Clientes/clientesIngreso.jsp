@@ -8,29 +8,29 @@
     </head>
     <body>
         <div class="container">            
-            <h1>Libro</h1>
-            <a class="btn btn-success" href="ControllerLibro?accion=nuevo"  > Agregar Nuevo</a>
-                <table border="1" width="1" cellspacing="1" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Id</th>
-                            <th class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <%                        
-                                            
-                    %>                     
-                    <tbody>
-                        <tr>
-                            <td class="text-center"><% %></td>
-                            <td class="text-center">                                
-                                <a href="ControllerEditorial?accion=editar&id=<% %>">Editar</a>
-                                <a class="btn btn-danger" href="ControllerEditorial?accion=delete&id=<% %>">Eliminar</a>
-                            </td>
-                        </tr>
-                        <% %>
-                    </tbody>
-                </table>
+            <h1>Ingreso de nuevo Cliente</h1>
+            <form id="form-work" name="form-work" action="ControllerClientes" method="get">
+               <div class="form-group" >
+                    <div class="col-md-4">
+                        <label class="control-label" for ="titulo">Nombre</label>
+                        <input name="titulo" class="form-control" placeholder="Ingresar Nombre" type="text">
+                    </div>
+                    <br><br><br>
+                    <div class="col-md-4">
+                        <label class="control-label" for ="apellido">Apellido</label>
+                        <input name="apellido" class="form-control" placeholder="Apellido" type="text">
+                    </div>    
+                    <br><br><br>
+                    <div class="col-md-4">
+                        <label for ="nit" class="control-label">NIT</label>
+                        <input name="nit" placeholder="Ingresar NIT" type="text" class="form-control">
+                    </div>  
+                    <div class="col-md-3">
+                        <button id="accion" name="accion" value="create" class="btn btn-success btn-lg btn-block info" type="submit">Crear Cliente</button>                    
+                    </div>
+                </div>
+                
+            </form>
         </div>
     </body>
 </html>
