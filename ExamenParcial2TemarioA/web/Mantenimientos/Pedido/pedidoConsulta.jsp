@@ -13,7 +13,7 @@
     <body>
         <div class="container">            
             <h1>Pedidos</h1>
-            <a class="btn btn-success" href="ControllerLibro?accion=nuevo">Agregar Nuevo</a>
+            <a class="btn btn-success" href="ControllerPedido?accion=nuevo">Agregar Nuevo</a>
             <br><br>
                 <table border="1" width="1" cellspacing="1" class="table table-bordered">
                     <thead>

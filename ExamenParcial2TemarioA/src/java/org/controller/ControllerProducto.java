@@ -17,6 +17,8 @@ import org.modelos.Producto;
 public class ControllerProducto extends HttpServlet {
 
     String listar="Mantenimientos/Producto/productoConsulta.jsp";
+    String buscar = "Mantenimientos/Producto/productoBusqueda.jsp";
+    String nuevo= "Mantenimientos/Producto/productoIngreso.jsp";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,22 +51,30 @@ public class ControllerProducto extends HttpServlet {
         switch (action){
             case "read":
                 acceso = listar;
-            break;
-            
-            case "busqueda" :
-                acceso = "Mantenimientos/Producto/productoBusqueda.jsp";
-            break;
-            
-           /* case "consumoWS" :
-                int idProducto = Integer.parseInt(request.getParameter("idProducto"));
+                break;
+            case "nuevo":
+                acceso=nuevo;
+                break;
+            case "agregar":
+                acceso=listar;
+                break;
+            case "editar":
+                break;
+            case "modificar":
+                break;
+            case "busqueda":
+                acceso = buscar;
+                break;
+           case "consumoWS" :
+                /*int idProducto = Integer.parseInt(request.getParameter("idProducto"));
                 List<org.servicios.Producto> lstEdit = getProducto(idProducto);
                 for (org.servicios.Producto edit : lstEdit){
                     System.out.println("Codigo Producto: " + edit.getIdProducto());
                     System.out.println("Descripcion: " + edit.getDescripcion());
                     System.out.println("Direccion: " + edit.getDireccion());
                     System.out.println("Telefono: " + edit.getTelefono());
-                }
-            break;*/
+                }*/
+            break;
             }
         RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
         vista.forward(request, response);

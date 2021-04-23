@@ -37,8 +37,10 @@ public class DaoClientes implements CrudClientes{
             con.close();
         } catch(ClassNotFoundException ex){
             Logger.getLogger(DaoClientes.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Mensaje error:"+ex);
         } catch(Exception ex){
             Logger.getLogger(DaoClientes.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Mensaje error:"+ex);
         }
         return lstCliente;
     }

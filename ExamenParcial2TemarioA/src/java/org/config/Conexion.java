@@ -15,9 +15,9 @@ public class Conexion {
     private ResultSet resultado = null;
 
     //String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-DIS3EBL\\SQLEXPRESS2019:1433;" +
-    //"databaseName=BIBLIOTECA;";
+    //"databaseName=TEMARIOAPII;";
     String stringConnectionUrl = "jdbc:sqlserver://JAVIER-DIAZ\\SQLEXPRESS\\:1433;"
-            + "databaseName=BIBLIOTECA;";
+            + "databaseName=TEMARIOAPII;";
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
     private boolean respuesta = false;
