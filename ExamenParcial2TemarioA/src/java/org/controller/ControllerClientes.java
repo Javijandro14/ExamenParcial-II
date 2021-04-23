@@ -55,7 +55,6 @@ public class ControllerClientes extends HttpServlet {
                 break;
             case "agregar":
                 acceso=listar;
-                
                 break;
             case "editar":
                 break;

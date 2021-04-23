@@ -15,7 +15,9 @@ import org.modelos.Pedido;
 @WebServlet(name = "ControllerPedido", urlPatterns = {"/ControllerPedido"})
 public class ControllerPedido extends HttpServlet {
 
-    String listar="Mantenimientos/Pedido/pedidoConsulta.jsp";
+    String listar="Mantenimientos/Pedido/pedidoConsulta.jsp";    
+    String buscar = "Mantenimientos/Pedido/pedidoBusqueda.jsp";
+    String nuevo= "Mantenimientos/Pedido/pedidoIngreso.jsp";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -48,22 +50,30 @@ public class ControllerPedido extends HttpServlet {
         switch (action){
             case "read":
                 acceso = listar;
-            break;
-            
-            case "busqueda" :
-                acceso = "Mantenimientos/Pedido/pedidoBusqueda.jsp";
-            break;
-            
-           /* case "consumoWS" :
-                int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+                break;
+            case "nuevo":
+                acceso=nuevo;
+                break;
+            case "agregar":
+                acceso=listar;
+                break;
+            case "editar":
+                break;
+            case "modificar":
+                break;
+            case "busqueda":
+                acceso = buscar;
+                break; 
+           case "consumoWS" :
+               /* int idPedido = Integer.parseInt(request.getParameter("idPedido"));
                 List<org.servicios.Pedido> lstEdit = getPedido(idPedido);
                 for (org.servicios.Pedido edit : lstEdit){
                     System.out.println("Codigo Pedido: " + edit.getIdPedido());
                     System.out.println("Descripcion: " + edit.getDescripcion());
                     System.out.println("Direccion: " + edit.getDireccion());
                     System.out.println("Telefono: " + edit.getTelefono());
-                }
-            break;*/
+                }*/
+            break;
             }
         RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
         vista.forward(request, response);
