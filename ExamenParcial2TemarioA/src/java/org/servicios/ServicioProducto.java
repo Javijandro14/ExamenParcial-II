@@ -5,9 +5,11 @@
  */
 package org.servicios;
 
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
+import org.dao.DaoProducto;
+import org.modelos.Producto;
 
 /**
  *
@@ -15,12 +17,10 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "ServicioProducto")
 public class ServicioProducto {
-
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    DaoProducto daoProducto = new DaoProducto();
+    @WebMethod(operationName = "getProducto")
+    public List<Producto> getProducto() {
+        List<Producto> lstProducto = daoProducto.listar();
+        return lstProducto;
     }
 }
