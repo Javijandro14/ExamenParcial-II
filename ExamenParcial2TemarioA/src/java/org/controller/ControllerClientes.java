@@ -15,9 +15,10 @@ import org.modelos.Clientes;
 @WebServlet(name = "ControllerClientes", urlPatterns = {"/ControllerClientes"})
 public class ControllerClientes extends HttpServlet {
 
-    String listar="Mantenimientos/Clientes/clientesConsulta.jsp";
-    
-    
+    String listar = "Mantenimientos/Clientes/clientesConsulta.jsp";
+    String buscar = "Mantenimientos/Clientes/clientesBusqueda.jsp";
+    String nuevo= "Mantenimientos/Clientes/clientesIngreso.jsp";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -26,7 +27,7 @@ public class ControllerClientes extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ControllerClientes</title>");            
+            out.println("<title>Servlet ControllerClientes</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ControllerClientes at " + request.getContextPath() + "</h1>");
@@ -35,68 +36,55 @@ public class ControllerClientes extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        String acceso="";        
-        String action = request.getParameter("accion");        
-        
+        String acceso = "";
+        String action = request.getParameter("accion");
+
         Clientes clientes = new Clientes();
         DaoClientes daoClientes = new DaoClientes();
-        
-        switch (action){
+
+        switch (action) {
             case "read":
                 acceso = listar;
+                break;
+            case "nuevo":
+                acceso=nuevo;
+                break;
+            case "agregar":
+                acceso=listar;
+                
+                break;
+            case "editar":
+                break;
+            case "modificar":
+                break;
+            case "busqueda":
+                acceso = buscar;
+                break;
+            case "consumoWS":
+            /*String nit = request.getParameter("nit");
+                List<org.servicios.ServicioClientes> lstClientes = getClientes(nit);
+                for (org.modelos.Clientes cliente : lstClientes.get()){
+                    System.out.println("Codigo Clientes: " + cliente.getIdClientes());
+                    System.out.println("Descripcion: " + cliente.getDescripcion());
+                    System.out.println("Direccion: " + cliente.getDireccion());
+                    System.out.println("Telefono: " + cliente.getTelefono());
+                }*/
             break;
-            
-            case "busqueda" :
-                acceso = "Mantenimientos/Clientes/clientesBusqueda.jsp";
-            break;
-            
-           /* case "consumoWS" :
-                int idClientes = Integer.parseInt(request.getParameter("idClientes"));
-                List<org.servicios.Clientes> lstEdit = getClientes(idClientes);
-                for (org.servicios.Clientes edit : lstEdit){
-                    System.out.println("Codigo Clientes: " + edit.getIdClientes());
-                    System.out.println("Descripcion: " + edit.getDescripcion());
-                    System.out.println("Direccion: " + edit.getDireccion());
-                    System.out.println("Telefono: " + edit.getTelefono());
-                }
-            break;*/
-            }
+        }
         RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
         vista.forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
