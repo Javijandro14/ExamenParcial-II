@@ -9,7 +9,7 @@
     <body>
         <div class="container">            
             <h1>Busqueda Producto</h1>
-            
+            <input tp>
         </div>
     </body>
 </html>

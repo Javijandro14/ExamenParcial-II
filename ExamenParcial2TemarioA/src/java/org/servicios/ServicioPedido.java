@@ -10,10 +10,10 @@ import org.modelos.Pedido;
 @WebService(serviceName = "ServicioPedido")
 public class ServicioPedido {
 
-    DaoPedido daoPedido = new DaoPedido();
+   DaoPedido daoPedido = new DaoPedido();
     @WebMethod(operationName = "getPedido")
     public List<Pedido> getPedido(@WebParam(name = "idPedido") int idPedido) {
-        List<Pedido> lstPedido = daoPedido.listar(idPedido);
+        List<Pedido> lstPedido = daoPedido.listar();
         return lstPedido;
     }
 }
