@@ -17,4 +17,9 @@ public class ServicioClientes {
         return lstClientes;
     }
     
+    @WebMethod(operationName = "getClienteNit")
+    public Clientes getClienteNit(@WebParam(name = "nit") int nit){
+        Clientes cliente = daoClientes.list(nit);
+        return cliente;
+    }
 }

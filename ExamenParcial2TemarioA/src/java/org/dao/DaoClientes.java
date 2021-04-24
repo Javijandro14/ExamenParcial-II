@@ -37,17 +37,15 @@ public class DaoClientes implements CrudClientes{
             con.close();
         } catch(ClassNotFoundException ex){
             Logger.getLogger(DaoClientes.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Mensaje error:"+ex);
         } catch(Exception ex){
             Logger.getLogger(DaoClientes.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Mensaje error:"+ex);
         }
         return lstCliente;
     }
 
     @Override
     public Clientes list(int id) {
-       sql = "SELECT * FROM CLIENTE WHERE ID_CLIENTE=" + id;
+       sql = "SELECT * FROM CLIENTE WHERE NIT=" + id;
         try {
             con.open();
             rs = con.executeQuery(sql);
@@ -62,6 +60,7 @@ public class DaoClientes implements CrudClientes{
             rs.close();
             con.close();
         } catch (Exception e) {
+            System.out.println(e);
         }
         return clientes;
     }
@@ -76,6 +75,7 @@ public class DaoClientes implements CrudClientes{
             resp = con.executeSql(sql);            
             con.close();
         } catch (Exception e) {
+            System.out.println(e);
         }
         return resp;
     }

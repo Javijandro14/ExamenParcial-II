@@ -1,4 +1,3 @@
-
 package org.controller;
 
 import java.io.IOException;
@@ -9,17 +8,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.dao.DaoClientes;
 import org.dao.DaoPedido;
 import org.modelos.Pedido;
-import servicios.InfoVariable;
 
 @WebServlet(name = "ControllerPedido", urlPatterns = {"/ControllerPedido"})
 public class ControllerPedido extends HttpServlet {
 
-    String listar="Mantenimientos/Pedido/pedidoConsulta.jsp";    
+    String listar = "Mantenimientos/Pedido/pedidoConsulta.jsp";
     String buscar = "Mantenimientos/Pedido/pedidoBusqueda.jsp";
-    String nuevo= "Mantenimientos/Pedido/pedidoIngreso.jsp";
-    
+    String nuevo = "Mantenimientos/Pedido/pedidoIngreso.jsp";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -28,7 +27,7 @@ public class ControllerPedido extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ControllerPedido</title>");            
+            out.println("<title>Servlet ControllerPedido</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ControllerPedido at " + request.getContextPath() + "</h1>");
@@ -37,26 +36,25 @@ public class ControllerPedido extends HttpServlet {
         }
     }
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         //processRequest(request, response);
-        String acceso="";        
-        String action = request.getParameter("accion");        
-        
+        //processRequest(request, response);
+        String acceso = "";
+        String action = request.getParameter("accion");
+
         Pedido pedido = new Pedido();
         DaoPedido daoPedido = new DaoPedido();
-        
-        switch (action){
+
+        switch (action) {
             case "read":
                 acceso = listar;
                 break;
             case "nuevo":
-                acceso=nuevo;
+                acceso = nuevo;
                 break;
             case "agregar":
-                acceso=listar;
+                acceso = listar;
                 break;
             case "editar":
                 break;
@@ -64,9 +62,9 @@ public class ControllerPedido extends HttpServlet {
                 break;
             case "busqueda":
                 acceso = buscar;
-                break; 
-           case "consumoWS" :
-               /* int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+                break;
+            case "consumoWS":
+                /* int idPedido = Integer.parseInt(request.getParameter("idPedido"));
                 List<org.servicios.Pedido> lstEdit = getPedido(idPedido);
                 for (org.servicios.Pedido edit : lstEdit){
                     System.out.println("Codigo Pedido: " + edit.getIdPedido());
@@ -74,8 +72,8 @@ public class ControllerPedido extends HttpServlet {
                     System.out.println("Direccion: " + edit.getDireccion());
                     System.out.println("Telefono: " + edit.getTelefono());
                 }*/
-            break;
-            }
+                break;
+        }
         RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
         vista.forward(request, response);
     }
@@ -95,5 +93,5 @@ public class ControllerPedido extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

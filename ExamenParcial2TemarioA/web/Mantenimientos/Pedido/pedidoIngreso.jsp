@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="servicios.VarDolar"%>
+<%@page import="servicios.TipoCambioSoap"%>
+<%@page import="servicios.TipoCambio"%>
 <%@page import="org.modelos.Producto"%>
 <%@page import="org.dao.DaoProducto"%>
 <%@page import="org.modelos.Departamentos"%>
@@ -26,50 +30,47 @@
                         List<Clientes> lstClientes = daoClientes.listar();
                         Iterator<Clientes> iteratorClientes = lstClientes.iterator();
                         Clientes clientes = null;
-                        DaoMunicipio daoMunicipio = new  DaoMunicipio();
+                        DaoMunicipio daoMunicipio = new DaoMunicipio();
                         List<Municipio> lstMunicipio = daoMunicipio.listar();
                         Iterator<Municipio> iteratorMunicipio = lstMunicipio.iterator();
                         Municipio municipio = null;
-                        DaoDepartamentos daoDepartamentos = new  DaoDepartamentos();
+                        DaoDepartamentos daoDepartamentos = new DaoDepartamentos();
                         List<Departamentos> lstDepartamentos = daoDepartamentos.listar();
                         Iterator<Departamentos> iteratorDepartamentos = lstDepartamentos.iterator();
                         Departamentos departamentos = null;
-                        DaoProducto daoProducto = new  DaoProducto();
+                        DaoProducto daoProducto = new DaoProducto();
                         List<Producto> lstProducto = daoProducto.listar();
                         Iterator<Producto> iteratorProducto = lstProducto.iterator();
                         Producto producto = null;
-                        
-                        
-                        
                     %>
                     <label>Cliente</label><br>
-                    
                     <select>
-                        <%
-                            while (iteratorClientes.hasNext()) {
+                        <%                            while (iteratorClientes.hasNext()) {
                                 clientes = iteratorClientes.next();
                         %>
-                        <option value="<%=clientes.getIdCliente()%>"><%=clientes.getNombre()+" "+clientes.getApellido()%></option>
+                        <option name="nit" value="<%=clientes.getNit()%>"><%=clientes.getNombre() + " " + clientes.getApellido() + " " + clientes.getNit()%></option>
                         <%
                             }
                         %>
                     </select>
+                    <button id="accion" name="accion" value="buscarCliente" class="btn btn-success" type="submit">Buscar</button>
                     <br><br>
+                    
                     <label>Observacion</label>
-                    <select>">
+                    <select multiple="multiple">
                         <%
-                            while (iteratorProducto.hasNext()){
-                            producto = iteratorProducto.next();  
+                            while (iteratorProducto.hasNext()) {
+                                producto = iteratorProducto.next();
                         %>
-                        <option value="<%=producto.getIdProducto()%>"><%=producto.getProducto()%></option>
+                        <option value="<%=producto.getIdProducto()%>"><%=producto.getProducto()%> Q<%=producto.getPrecio()%></option>
                         <%}%>
                     </select>
-                    <label value=""><%=producto.getIdProducto()%></label>
+                    
                     <label>Departamento</label>
                     <select>
                         <%
-                            while (iteratorDepartamentos.hasNext()){
-                            departamentos = iteratorDepartamentos.next();  
+                            while (iteratorDepartamentos.hasNext()) {
+                                departamentos = iteratorDepartamentos.next();
                         %>
                         <option value="<%=departamentos.getIdDepartamento()%>"><%=departamentos.getDepartamento()%></option>
                         <%}%>
@@ -77,12 +78,22 @@
                     <label>Municipio</label>
                     <select>
                         <%
-                            while (iteratorMunicipio.hasNext()){
-                            municipio = iteratorMunicipio.next();  
+                            while (iteratorMunicipio.hasNext()) {
+                                municipio = iteratorMunicipio.next();
                         %>
                         <option value="<%=municipio.getIdMunicipio()%>"><%=municipio.getMunicipio()%></option>
                         <%}%>
                     </select>
+                    <%
+                        TipoCambio tc = new TipoCambio();
+                        TipoCambioSoap tcs = tc.getTipoCambioSoap();
+                        List<VarDolar> varDolar = tcs.tipoCambioDia().getCambioDolar().getVarDolar();
+                        Iterator<VarDolar> iterVarDolar = varDolar.iterator();
+                        VarDolar mivd = null;
+                        iterVarDolar.hasNext();
+                        mivd = iterVarDolar.next();
+                    %>
+                    <label>Cantidad en quetzales por un dolar: <%=mivd.getReferencia()%></label>
                 </div>
                 </body>
                 </html>
