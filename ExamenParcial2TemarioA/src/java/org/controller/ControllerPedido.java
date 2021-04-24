@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.dao.DaoPedido;
 import org.modelos.Pedido;
+import servicios.InfoVariable;
 
 @WebServlet(name = "ControllerPedido", urlPatterns = {"/ControllerPedido"})
 public class ControllerPedido extends HttpServlet {
@@ -94,5 +95,5 @@ public class ControllerPedido extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
 }

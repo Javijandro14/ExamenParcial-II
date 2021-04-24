@@ -9,7 +9,6 @@ import org.interfaces.CrudMunicipio;
 import org.modelos.Municipio;
 
 public class DaoMunicipio implements CrudMunicipio{
-
     Municipio municipio = new Municipio();
     String sql = "";
     Conexion con = new Conexion();

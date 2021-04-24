@@ -11,8 +11,9 @@ import org.modelos.Pedido;
 public class ServicioPedido {
 
     DaoPedido daoPedido = new DaoPedido();
-     @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+     @WebMethod(operationName = "getPedido")
+    public List<Pedido> getPedido() {
+        List<Pedido> lstPedido= daoPedido.listar();
+        return lstPedido;
     }
 }
