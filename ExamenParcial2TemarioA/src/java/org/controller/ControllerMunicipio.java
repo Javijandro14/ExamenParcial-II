@@ -15,7 +15,6 @@ import org.modelos.Municipio;
 public class ControllerMunicipio extends HttpServlet {
 
     String listar = "Mantenimientos/Municipio/municipioConsulta.jsp";
-    String buscar = "Mantenimientos/Municipio/municipioBusqueda.jsp";
     String nuevo = "Mantenimientos/Municipio/municipioIngreso.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -58,9 +57,6 @@ public class ControllerMunicipio extends HttpServlet {
             case "editar":
                 break;
             case "modificar":
-                break;
-            case "busqueda":
-                acceso = buscar;
                 break;
             case "consumoWS":
                 /*int idMunicipio = Integer.parseInt(request.getParameter("idMunicipio"));

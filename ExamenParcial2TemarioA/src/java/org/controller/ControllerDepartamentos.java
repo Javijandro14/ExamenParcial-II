@@ -15,7 +15,6 @@ import org.modelos.Departamentos;
 public class ControllerDepartamentos extends HttpServlet {
 
     String listar = "Mantenimientos/Departamentos/departamentosConsulta.jsp";
-    String buscar = "Mantenimientos/Departamentos/departamentosBusqueda.jsp";
     String nuevo= "Mantenimientos/Departamentos/departamentosIngreso.jsp";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -59,9 +58,6 @@ public class ControllerDepartamentos extends HttpServlet {
             case "editar":
                 break;
             case "modificar":
-                break;
-            case "busqueda":
-                acceso = buscar;
                 break;
            case "consumoWS" :
                 /*int idDepartamentos = Integer.parseInt(request.getParameter("idDepartamentos"));

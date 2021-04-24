@@ -40,10 +40,10 @@
                     <tbody>
                         <tr>
                             <td class="text-center"><%=pedido.getIdPedido()%></td>
-                            <td class="text-center"><%=pedido.getIdCliente()%></td>
+                            <td class="text-center"><%=pedido.getCliente()%></td>
                             <td class="text-center"><%=pedido.getObservacion()%></td>
-                            <td class="text-center"><%=pedido.getIdDepartamento()%></td>
-                            <td class="text-center"><%=pedido.getIdMunicipio()%></td>
+                            <td class="text-center"><%=pedido.getDepartamento()%></td>
+                            <td class="text-center"><%=pedido.getMunicipio()%></td>
                             <td class="text-center"><%=pedido.getEstado()%></td>
                             <td class="text-center"><%=pedido.getTotal()%></td>
                             <td class="text-center"><%=pedido.getTotalUsd()%></td>

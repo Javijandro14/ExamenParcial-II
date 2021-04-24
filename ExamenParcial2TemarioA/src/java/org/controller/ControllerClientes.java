@@ -16,7 +16,6 @@ import org.modelos.Clientes;
 public class ControllerClientes extends HttpServlet {
 
     String listar = "Mantenimientos/Clientes/clientesConsulta.jsp";
-    String buscar = "Mantenimientos/Clientes/clientesBusqueda.jsp";
     String nuevo= "Mantenimientos/Clientes/clientesIngreso.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -59,9 +58,6 @@ public class ControllerClientes extends HttpServlet {
             case "editar":
                 break;
             case "modificar":
-                break;
-            case "busqueda":
-                acceso = buscar;
                 break;
             case "consumoWS":
             /*String nit = request.getParameter("nit");

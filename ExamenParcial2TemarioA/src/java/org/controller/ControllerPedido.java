@@ -16,7 +16,6 @@ import org.modelos.Pedido;
 public class ControllerPedido extends HttpServlet {
 
     String listar = "Mantenimientos/Pedido/pedidoConsulta.jsp";
-    String buscar = "Mantenimientos/Pedido/pedidoBusqueda.jsp";
     String nuevo = "Mantenimientos/Pedido/pedidoIngreso.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -59,9 +58,6 @@ public class ControllerPedido extends HttpServlet {
             case "editar":
                 break;
             case "modificar":
-                break;
-            case "busqueda":
-                acceso = buscar;
                 break;
             case "consumoWS":
                 /* int idPedido = Integer.parseInt(request.getParameter("idPedido"));

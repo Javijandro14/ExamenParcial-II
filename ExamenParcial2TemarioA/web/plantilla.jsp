@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Aplicación Web</title>
+        <title>Aplicación Web</title>
         <link href="Styles/Site.css" rel="stylesheet" type="text/css"/>
         <link href="Content/bootstrap.css" rel="stylesheet" type="text/css"/>
-       <script src="Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-       <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
-       
-       
-   </head>
+        <script src="Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+
+
+    </head>
     <body>
         <form id="Form1" >
-           <nav class="navbar navbar-default" role="navigation" >
+            <nav class="navbar navbar-default" role="navigation" >
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,79 +22,27 @@
                         </button>                    
                     </div>
 
-                    <div class="navbar-header">
-                           <a class="navbar-brand" href="index.jsp">Inicio</a>
-                     </div>
-                    <div class="collapse navbar-collapse">
+                    <div class="navbar-header" style=" align: center;">
+                        <a class="navbar-brand" href="index.jsp">Inicio</a>
                         <ul class="nav navbar-nav">                        
                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Clientes<b class="caret"></b></a>
-                                <ul id="Ul2" class="dropdown-menu" >
-                                    <li> 
-                                        <a href="ControllerClientes?accion=read" id="A2">Consulta</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerClientes?accion=busqueda" id="A3">Busqueda</a>
-                                    </li>
-                                </ul>
-                             </li>
-                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Departamentos<b class="caret"></b></a>
-                                <ul id="Ul2" class="dropdown-menu" >
-                                    <li> 
-                                        <a href="ControllerDepartamentos?accion=read" id="A2">Consulta</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerDepartamentos?accion=busqueda" id="A3">Busqueda</a>
-                                    </li>
-                                </ul>
-                             </li>   
-                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Detalle Pedido<b class="caret"></b></a>
-                                <ul id="Ul2" class="dropdown-menu" >
-                                    <li> 
-                                        <a href="ControllerDetallePedido?accion=read" id="A2">Consulta</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerDetallePedido?accion=busqueda" id="A3">Busqueda</a>
-                                    </li>
-                                </ul>
-                             </li>   
-                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Municipios<b class="caret"></b></a>
-                                <ul id="Ul2" class="dropdown-menu" >
-                                    <li> 
-                                        <a href="ControllerMunicipio?accion=read" id="A2">Consulta</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerMunicipio?accion=busqueda" id="A3">Busqueda</a>
-                                    </li>
-                                </ul>
-                             </li>
-                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Pedidos<b class="caret"></b></a>
-                                <ul id="Ul2" class="dropdown-menu" >
-                                    <li> 
-                                        <a href="ControllerPedido?accion=read" id="A2">Consulta</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerPedido?accion=busqueda" id="A3">Busqueda</a>
-                                    </li>
-                                </ul>
-                             </li>   
-                             <li id="Li2" class="dropdown" >
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="A1">Producto<b class="caret"></b></a>
-                                <ul id="Ul2" class="dropdown-menu" >
-                                    <li> 
-                                        <a href="ControllerProducto?accion=read" id="A2">Consulta</a>
-                                    </li>
-                                    <li> 
-                                        <a href="ControllerProducto?accion=busqueda" id="A3">Busqueda</a>
-                                    </li>
-                                </ul>
-                             </li>   
-                        </ul>                   
-                    </div>
+                                <a href="ControllerClientes?accion=read" id="A2">Clientes</a>
+                            <li id="Li2" class="dropdown" >
+                                <a href="ControllerDepartamentos?accion=read" id="A2">Departamentos</a>
+                            </li>   
+                            <li id="Li2" class="dropdown" >
+                                <a href="ControllerDetallePedido?accion=read" id="A2">Detalle Pedido</a>
+                            </li>   
+                            <li id="Li2" class="dropdown" >
+                                <a href="ControllerMunicipio?accion=read" id="A2">Municipios</a>
+                            </li>
+                            <li id="Li2" class="dropdown" >
+                                <a href="ControllerPedido?accion=read" id="A2">Pedidos</a>
+                            </li>   
+                            <li id="Li2" class="dropdown" >
+                                <a href="ControllerProducto?accion=read" id="A2">Producto</a>
+                            </li>   
+                        </ul>  
                 </div>
             </nav>
             <div class="container body-content">
@@ -103,7 +51,7 @@
                 <footer>
                 </footer>
             </div>  
-       </form>   
+        </form>   
 
     </body>
 </html>

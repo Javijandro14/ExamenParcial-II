@@ -20,7 +20,7 @@ public class DaoClientes implements CrudClientes{
     public List listar() {
         ArrayList<Clientes> lstCliente = new ArrayList<>();
         try{
-            sql = "SELECT * FROM CLIENTE";
+            sql = "SELECT * FROM CLIENTE where nit=125412745";
             con.open();
             rs = con.executeQuery(sql);
             while(rs.next()){

@@ -24,26 +24,20 @@ public class DaoPedido implements CrudPedido{
     public List listar() {
          ArrayList<Pedido> lstPedido = new ArrayList<>();
         try {
-            /* strSql =    "SELECT " + 
-                        "   L.ID_LIBRO, L.PAGINAS, L.TITULO, L.ID_ESTADO, LE.DESCRIPCION ESTADO, " +
-                        "   L.ID_CATEGORIA, C.DESCRIPCION CATEGORIA, L.ID_EDITORIAL, E.DESCRIPCION EDITORIAL  	" + 
-                        "FROM	LIBRO L " + 
-                        "   JOIN	CATEGORIA C " + 
-                        "   ON  	L.ID_CATEGORIA = C.ID_CATEGORIA" + 
-                        "   JOIN	EDITORIAL E" +
-                        "   ON		L.ID_EDITORIAL = E.ID_EDITORIAL" +
-                        "   JOIN	LIBRO_ESTADO LE" + 
-                        "   ON		LE.ID_ESTADO = L.ID_ESTADO " +
-                        "ORDER BY L.ID_LIBRO ASC";*/
-            strSql = "SELECT dbo.LIBRO.ID_LIBRO, LIBRO.TITULO,LIBRO.PAGINAS,LIBRO.DESCRIPCION as 'LIBRODESC', LIBRO.ESTADO, LIBRO.ID_CATEGORIA, LIBRO.ID_ESTADO, LIBRO.ID_EDITORIAL, \n"
-                    + "CATEGORIA.ID_CATEGORIA,CATEGORIA.DESCRIPCION as 'CATEGORIA',EDITORIAL.ID_EDITORIAL,EDITORIAL.DESCRIPCION as'EDITORIAL', LIBRO_ESTADO.DESCRIPCION as'ESTADOS', LIBRO_ESTADO.ID_ESTADO from dbo.CATEGORIA INNER JOIN dbo.LIBRO ON\n"
-                    + "dbo.CATEGORIA.ID_CATEGORIA = dbo.LIBRO.ID_CATEGORIA INNER JOIN dbo.EDITORIAL ON dbo.EDITORIAL.ID_EDITORIAL= dbo.LIBRO.ID_EDITORIAL INNER JOIN dbo.LIBRO_ESTADO ON dbo.LIBRO_ESTADO.ID_ESTADO=dbo.LIBRO.ID_ESTADO";
+            strSql = "SELECT DBO.PEDIDO.ID_PEDIDO, dbo.CLIENTE.NOMBRE, dbo.CLIENTE.APELLIDO,dbo.PEDIDO.OBSERVACION, DEPARTAMENTO.NOMBRE as 'departamento',MUNICIPIO.NOMBRE as 'municipio',dbo.PEDIDO.ESTADO, dbo.PEDIDO.TOTAL, dbo.PEDIDO.TOTAL_USD from DBO.PEDIDO JOIN dbo.CLIENTE on dbo.PEDIDO.ID_CLIENTE=dbo.CLIENTE.ID_CLIENTE join dbo.DEPARTAMENTO on dbo.PEDIDO.ID_DEPARTAMENTO= dbo.DEPARTAMENTO.ID_DEPARTAMENTO join dbo.MUNICIPIO on dbo.DEPARTAMENTO.ID_DEPARTAMENTO=dbo.MUNICIPIO.ID_DEPARTAMENTO join dbo.PEDIDO P on P.ID_MUNICIPIO=dbo.MUNICIPIO.ID_MUNICIPIO;";
             conexion.open();
             rs = conexion.executeQuery(strSql);
 
             while (rs.next()) {
                 Pedido pedido = new Pedido();
-                pedido.setIdPedido(rs.getInt("idPedido"));
+                pedido.setIdPedido(rs.getInt("ID_PEDIDO"));
+                pedido.setCliente(rs.getString("NOMBRE")+" "+rs.getString("APELLIDO"));
+                pedido.setDepartamento(rs.getString("departamento"));
+                pedido.setMunicipio(rs.getString("municipio"));
+                pedido.setEstado(rs.getInt("ESTADO"));
+                pedido.setObservacion(rs.getString("OBSERVACION"));
+                pedido.setTotal(rs.getDouble("TOTAL"));
+                pedido.setTotalUsd(rs.getDouble("TOTAL_USD"));
                 lstPedido.add(pedido);
             }
             rs.close();

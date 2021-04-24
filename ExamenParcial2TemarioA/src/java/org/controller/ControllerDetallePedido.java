@@ -59,9 +59,6 @@ public class ControllerDetallePedido extends HttpServlet {
                 break;
             case "modificar":
                 break;
-            case "busqueda":
-                acceso = buscar;
-                break;
             case "consumoWS" :
                 /*int idDetallePedido = Integer.parseInt(request.getParameter("idDetallePedido"));
                 List<org.servicios.DetallePedido> lstEdit = getDetallePedido(idDetallePedido);

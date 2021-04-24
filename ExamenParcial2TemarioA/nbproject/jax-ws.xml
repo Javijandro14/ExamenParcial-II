@@ -13,11 +13,11 @@
     <service name="ServicioDepartamentos">
       <implementation-class>org.servicios.ServicioDepartamentos</implementation-class>
     </service>
-    <service name="ServicioPedido">
-      <implementation-class>org.servicios.ServicioPedido</implementation-class>
-    </service>
     <service name="ServicioProducto">
       <implementation-class>org.servicios.ServicioProducto</implementation-class>
+    </service>
+    <service name="ServicioPedido">
+      <implementation-class>org.servicios.ServicioPedido</implementation-class>
     </service>
   </services>
   <clients>
